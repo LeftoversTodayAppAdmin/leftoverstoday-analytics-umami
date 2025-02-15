@@ -6,7 +6,7 @@ services:
     ports:
       - "6000:3000"
     environment:
-      DATABASE_URL: mysql://mariadb:Jxv5dx6kdb!@localhost:4008/umami
+      DATABASE_URL: mysql://mariadb:Jxv5dx6kdb!@0.0.0.0:4008/umami
       DATABASE_TYPE: mysql
       APP_SECRET: 1f3965a5f014e62c1bacfa0aa74ea10e
     init: true
