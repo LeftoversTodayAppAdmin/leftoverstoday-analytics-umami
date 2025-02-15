@@ -1,0 +1,18 @@
+---
+version: '3'
+services:
+  umami:
+    image: ghcr.io/umami-software/umami:mysql-latest
+    ports:
+      - "6000:3000"
+    environment:
+      DATABASE_URL: mysql://mariadb:Jxv5dx6kdb!@localhost:4008/umami
+      DATABASE_TYPE: mysql
+      APP_SECRET: 1f3965a5f014e62c1bacfa0aa74ea10e
+    init: true
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl http://localhost:6000/api/heartbeat"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
